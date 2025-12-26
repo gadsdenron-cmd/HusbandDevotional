@@ -12,14 +12,16 @@ export const callGemini = async (prompt: string, systemInstruction: string = "")
   
   try {
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    // Using gemini-3-flash-preview for fast, high-quality text responses
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3-flash-preview',
       contents: prompt,
       config: {
         systemInstruction: systemInstruction,
       },
     });
 
+    // Directly access the .text property as per the latest SDK rules
     return response.text || "I couldn't generate a response. Please try again.";
   } catch (error) {
     console.error("Gemini API Error:", error);

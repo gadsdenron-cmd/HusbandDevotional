@@ -1,5 +1,12 @@
+
 import { Verse, WisdomQuote, Devotional } from './types';
 
+/**
+ * APP CONFIGURATION
+ * To create a new app from this boilerplate:
+ * 1. Change this APP_ID to a unique string (e.g., 'wifes-devotional')
+ * 2. Connect your new app to a unique Firebase project in your environment settings.
+ */
 export const APP_ID = 'husbands-devotional';
 
 export const VERSE_LIBRARY: Verse[] = [
